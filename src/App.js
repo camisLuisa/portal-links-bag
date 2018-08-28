@@ -1,6 +1,8 @@
 import Component from 'metal-jsx';
 import './style/main.scss';
 import Menu from './components/Menu';
+import Add from './components/Add';
+
 
 const data = [
 	{
@@ -103,7 +105,10 @@ const data = [
 class App extends Component {
 	render() {
 		return (
-			<Menu items={data}/>
+			<div>
+				<Menu items={data}/>
+				<Add/>
+			</div>
 		);
 	}
 }
