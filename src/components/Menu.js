@@ -1,6 +1,5 @@
 import Component, {Config} from 'metal-jsx';
-import Edit from './Edit';
-import Delete from './Delete';
+import Item from './Item';
 
 class Menu extends Component {
     render() {
@@ -9,8 +8,8 @@ class Menu extends Component {
                 {this.props.items.map((item, index) => (
                     <li key={index}>
 
-                        {item.link ? <a href={item.link}>{item.title}</a> : item.title }<Edit/><Delete/>
-
+                        {item.link ? <Item title={item.title} link={item.link}/> : <Item title={item.title}/> }
+                        
                         {item.itemList && <Menu items={item.itemList} />}
 
                     </li>
@@ -19,6 +18,8 @@ class Menu extends Component {
         );
     }
 }
+
+
 
 Menu.PROPS = {
     items: Config.array()
